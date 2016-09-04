@@ -13,8 +13,8 @@
 #include <windows.h>
 #endif
 
-const int WIDTH = 1120;
-const int HEIGHT = 760;
+const int WIDTH = 300;
+const int HEIGHT = 200;
 
 
 void myDisplay();
@@ -347,7 +347,7 @@ int humanAndZombie[6][172][102][3] = {
 int main(int argc,char** argv){
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_RGB);
-    glutInitWindowSize(WIDTH,HEIGHT);
+    glutInitWindowSize(800,600);
     glutInitWindowPosition(50,50);
     glutCreateWindow("OpenGL Student ID");
     glutDisplayFunc(myDisplay);
@@ -381,7 +381,7 @@ void drawHumanAnimation(int x,int y){
     int humanHeight = 172;
     int hazFrame = 6;//จำนวนเฟรม
     int timeFrame = 7;// หน่วงเวลา
-    int currentFrame = ((frame-1)/7)%hazFrame;
+    int currentFrame = ((frame-1)/timeFrame)%hazFrame;
     glBegin(GL_POINTS);
     for(int i=0;i<humanHeight;i++){
         for(int j=0;j<humanWidth;j++) {
